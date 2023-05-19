@@ -5,5 +5,5 @@
 
 This is the first version of my [**portfolio website**](https://www.gadorcruz.me) hosting using GitHub pages.
 
-![](img/preview.png)
+![](img/preview2.png)
 # Porfolio
