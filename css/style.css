@@ -314,7 +314,7 @@ main {
   margin: 0.5rem 1.8rem;
   margin-left: 0;
   padding: 1rem 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background: linear-gradient(
     99.41deg,
     var(--pink) -39.51%,
@@ -339,7 +339,7 @@ main {
 .cta2,
 .nav-link:nth-child(4) {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border-image-slice: 1;
   border-image-source: linear-gradient(
     180deg,
@@ -359,7 +359,7 @@ main {
   right: -1.8px;
   background: linear-gradient(180deg, var(--aqua) 100%,var(--pink) 0%);
   z-index: -1;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .main-social-links {
@@ -377,7 +377,7 @@ main {
 }
 
 #about-me {
-  background-color: #100F1D;
+  /* background-color: #100F1D; */
   margin-bottom: 5rem;
 }
 
@@ -393,7 +393,7 @@ main {
   left: 0;
   width: 5rem;
   height: 0.5rem;
-  border-radius: 3.5rem;
+  border-radius: 0.5rem;
   background-color: var(--aqua);
 }
 
@@ -420,6 +420,433 @@ main {
   margin-right: 1rem;
 }
 
+/* FONT LINK/IMPORT */
+@import url(../css/font-root-styles/general-sans.css);
+@import url(../css/font-root-styles/okinesans.css);
+@import url(../css/font-root-styles/satoshi.css);
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+:root {
+  --primary: #E6815F;
+  --secondary: #00667E;
+  --third: #09CED5;
+  --yellow: #FBCB0A;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-color: #FFF1CB; */
+  background-image: url('../img/annie-spratt-0ZPSX_mQ3xI-unsplash.jpg') ;
+  /* background-size: 2000px 3000px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: "Satoshi 400";
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: black;
+}
+
+header,
+main,
+main ~ section,
+footer {
+  padding: 2rem;
+}
+
+h1,
+.declaration {
+  margin: 0;
+
+  font-family: "GeneralSans 700";
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-family: "Satoshi 700";
+}
+
+h3 {
+  font-family: "Satoshi 900";
+  font-size: 2rem;
+}
+
+.separator {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.featured-projects-box h3 {
+  color: var(--primary);
+}
+
+img {
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a > img {
+  width: 3rem;
+}
+
+a > img:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out;
+}
+
+/******************************************
+/* LAYOUT
+font-family: 'Fira Mono', monospace;
+font-family: 'Fira Sans', sans-serif;
+/*******************************************/
+/* HEADER AND NAV STYLING */
+header {
+  padding: 1rem 2rem;
+  /* border-bottom: 1px solid #df7b65; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 55px;
+  z-index: 2;
+}
+
+.nav-menu {
+  position: fixed;
+  display: contents;
+  top: -2rem;
+  right: -200vh;
+  height: 100vh;
+  width: 75vw;
+
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+
+  background: var(--secondary);
+  transition: all 0.5s ease-in-out;
+
+  z-index: 2;
+}
+
+.nav-menu.is-active {
+  top: 0;
+  right: 0;
+  margin: 0;
+
+  box-shadow: 0 1rem 5rem 0 var(--secondary);
+}
+
+/**************************
+/* HAMBURGER, MENU-BAR STYLING
+**************************/
+.hamburger {
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 0;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  z-index: 2;
+
+}
+
+.hamburger.is-active {
+  position: fixed;
+  top: 2.3rem;
+  right: 2rem;
+  background: var(--secondary);
+}
+
+.menu-bar {
+  position: relative;
+  width: 100%;
+}
+
+.menu-bar,
+.menu-bar::before,
+.menu-bar::after {
+  height: 0.2rem;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-bar::before {
+  position: absolute;
+  content: "";
+  top: -1.1rem;
+  right: 0;
+  width: 70%;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-bar::after {
+  position: absolute;
+  content: "";
+  bottom: -1.1rem;
+  right: 0;
+  width: 70%;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-bar.is-active {
+  background: transparent;
+}
+
+.menu-bar.is-active::before {
+  width: 100%;
+  transform: rotate(45deg) translateX(1.5rem);
+}
+
+.menu-bar.is-active::after {
+  width: 100%;
+  transform: rotate(-45deg) translateX(1.5rem);
+}
+
+/* ***********************
+/* NAV LINKS STYLES
+*************************/
+.nav-link a {
+  color:  black;
+}
+
+.nav-link a:hover {
+  color:  var(--yellow);
+}
+
+.nav-link:nth-child(4):hover {
+  transform: scale(1.08);
+  background: transparent;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-link:nth-child(4) a {
+  display: block;
+  padding: 0.8rem 2.5rem;
+  cursor: pointer;
+}
+
+.nav-link:nth-child(4) a {
+  color: white;
+}
+
+.nav-social-links {
+  padding: 2.5rem 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-links img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.social-links img:hover {
+  transform: scale(1.03);
+  transition: transform 0.4s ease-in-out;
+}
+
+/************************
+/* MAIN SECTION STYLING
+************************/
+main {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-highlight {
+  background: -webkit-linear-gradient(
+    top right,
+
+    var(--primary),
+    var(--third)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.declaration {
+  margin: 0;
+
+  font-size: 2.5rem;
+  line-height: 1.4;
+  color: var(--secondary);
+}
+
+.cta-box {
+  margin-top: 4rem;
+}
+
+.cta,
+.cta1 {
+  font-family: "Satoshi 700";
+  font-size: 1.5rem;
+}
+
+.cta {
+  display: inline-block;
+  width: 12rem;
+  margin: 0.5rem 1.8rem;
+  margin-left: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    99.41deg,
+    var(--primary) -39.51%,
+    var(--third) 116.85%
+  );
+
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.cta1 {
+  /* text-transform: uppercase; */
+  font-weight: 500;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease-in-out;
+}
+
+.cta2,
+.nav-link:nth-child(4) {
+  position: relative;
+  border-radius: 0.5rem;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+  background: var(--primary);
+}
+
+.cta2::after,
+.nav-link:nth-child(4)::after {
+  position: absolute;
+  content: "";
+  top: -1.8px;
+  bottom: -1.8px;
+  left: -1.8px;
+  right: -1.8px;
+  background: linear-gradient(180deg, var(--secondary) 100%,var(--primary) 0%);
+  z-index: -1;
+  border-radius: 0.5rem;
+}
+
+.main-social-links {
+  display: none;
+}
+
+/* ABOUT SECTION STYLING */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 10rem;
+}
+
+#about-me {
+  /* background-color: #100F1D; */
+  margin-bottom: 5rem;
+}
+
+.separator {
+  position: relative;
+  align-self: flex-start;
+}
+
+.separator::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary);
+}
+
+.about-text {
+  padding-top: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-text span {
+  font-family: "Satoshi 700";
+  color: var(--primary);
+}
+
+.about-text + ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 1.55rem;
+}
+
+.tool {
+  width: 45%;
+  margin-right: 1rem;
+}
+
 .img-box {
   position: relative;
   display: flex;
@@ -427,11 +854,11 @@ main {
   align-items: center;
   margin-top: 3.5rem;
   padding: 0.3rem;
-  border-radius: 1.8rem;
+  border-radius: 0.5rem;
   background: linear-gradient(
     99.41deg,
     #002cc7 -39.51%,
-    var(--purple)116.85%
+    var(--third)116.85%
   );
 }
 
@@ -447,7 +874,7 @@ main {
 
 .profile-img {
   width: 25rem;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   object-fit: fill;
 }
 .featured-projects-box,
@@ -464,12 +891,12 @@ main {
 .skill {
   padding: 4.5rem 2.75rem;
   max-width: 35rem;
-  background: var(--aqua);
+  background: var(--secondary);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 1.2rem;
+  border-radius: 0.5rem;
 }
 
 .skill > div {
@@ -487,7 +914,7 @@ main {
 .skill h3,
 .skill span {
   /* margin: 2.2rem 0 0; */
-  color: var(--pink);
+  color: var(--primary);
 }
 
 .skill span {
@@ -501,9 +928,9 @@ main {
 
   max-width: 35rem;
   max-height: 58rem;
-  background: var(--aqua);
+  background: var(--secondary);
 
-  border-radius: 1.2rem;
+  border-radius: 0.5rem;
 }
 
 .project-details-box {
@@ -519,7 +946,7 @@ h3 {
 
 .project-main-info p > a {
   font-family: "Satoshi 700";
-  color: var(--pink);
+  color: var(--primary);
 }
 
 .project-main-info p > a:hover {
@@ -535,8 +962,8 @@ h3 {
 .project-tools p {
   background: linear-gradient(
     150deg,
-    var(--pink) -6.94%,
-    var(--purple) 97.22%
+    var(--primary) -6.94%,
+    var(--secondary) 97.22%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -572,7 +999,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  color: black
+  color: white
 }
 
 /* CONTACT SECTION STYLING */
@@ -593,7 +1020,7 @@ h3 {
 #contact span {
   font-family: "Satoshi 500";
   font-size: 1.6rem;
-  color: var(--pink);
+  color: var(--primary);
 }
 
 h4 {
@@ -628,7 +1055,7 @@ footer span {
   background: linear-gradient(
     210deg,
     #CDE9D6 -6.94%,
-    var(--pink).22%
+    var(--primary).22%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -735,6 +1162,11 @@ footer span {
     padding: 2.5rem;
   }
 }
+.project-details-box {
+
+  color: white
+}
+
 
 @media screen and (min-width: 1024px) {
   body > * {
@@ -797,14 +1229,14 @@ footer span {
     margin-top: 2.5rem;
     padding: 0;
     max-width: 50%;
-    color: black
+    color: white
   }
 
   .project-main-info {
     position: relative;
     padding: 2rem;
-    border-radius: 0.8rem;
-    background: var(--aqua);
+    border-radius: 0.5rem;
+    background: var(--secondary);
 
 
     z-index: 1;
@@ -816,9 +1248,9 @@ footer span {
     width: 100%;
     height: 100%;
     bottom: 0;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     transform: skew(-16deg);
-    background-color: var(--aqua);
+    background-color: var(--secondary);
     z-index: -2;
   }
 
@@ -831,9 +1263,9 @@ footer span {
     top: 0;
     right: 2.7rem;
     bottom: 0;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     transform: skew(-10deg);
-    background-color: var(--aqua);
+    background-color: var(--secondary);
     z-index: -2;
   }
 
@@ -872,7 +1304,7 @@ footer span {
   }
 
   .project-img-link > img {
-    border-radius: 1.2rem;
+    border-radius: 0.5rem;
   }
 
   .project-img-link > img:hover {
@@ -963,6 +1395,10 @@ footer span {
     width: 103rem;
   }
 
+  .project-details-box {
+
+    color: white
+  }
   header,
   footer {
     width: 100%;
